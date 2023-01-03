@@ -46,7 +46,14 @@ import axios from "axios"
     },
     methods:{
       onSubmit(){
-        
+        axios.post('https://vue-blog-card-app-default-rtdb.firebaseio.com/records.json',{...this.post, updateDate: new Date()}).then((res=>{
+          console.log(res)
+          this.post= {}
+        }))
+        .catch(e=>{
+          console.log(e)
+        })
+        // console.log({...this.post, updateDate: new Date()})
       }
     }
   }
