@@ -27,3 +27,15 @@
     </div>
   </nav>
 </template>
+
+<style scoped>
+  .router-link-active{
+    background-color: rgb(86, 125, 255);
+  }
+  .router-link-active .nav-link{
+    color: #fff;
+  }
+  a{
+    text-decoration: none;
+  }
+</style>

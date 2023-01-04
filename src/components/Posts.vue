@@ -15,7 +15,8 @@
 </template>
 
 <script>
-  import axios from "axios"
+  // import axios from "axios"
+  import axiosInstance from "../custom_axios"
   export default{
     data(){
       return{
@@ -23,7 +24,7 @@
       }
     },
     mounted(){
-      axios.get('https://vue-blog-card-app-default-rtdb.firebaseio.com/records.json').then((res)=>{
+      axiosInstance.get('/records.json').then((res)=>{
         // console.log("resGet: ",res.data)
         let data = res.data
         for(let key in data){

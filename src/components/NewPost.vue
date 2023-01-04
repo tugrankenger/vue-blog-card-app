@@ -23,7 +23,7 @@
         <label>Content</label>
         <input v-model="post.content" type="text" class="form-control" placeholder="Enter content...">
       </div>
-      <!-- <button @click="$router.push('/')" class="btn btn-danger">Cancel</button> -->
+      <button @click="$router.push('/')" class="btn btn-danger me-2">Cancel</button>
       <button type="submit" class="btn btn-success">Save</button>
     </form>
   </div>
@@ -46,9 +46,10 @@ import axios from "axios"
     },
     methods:{
       onSubmit(){
-        axios.post('https://vue-blog-card-app-default-rtdb.firebaseio.com/records.json',{...this.post, updateDate: new Date()}).then((res=>{
+        axios.post('/records.json',{...this.post, updateDate: new Date()}).then((res=>{
           console.log(res)
           this.post= {}
+          this.$router.push('/')
         }))
         .catch(e=>{
           console.log(e)
